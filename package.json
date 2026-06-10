@@ -1,6 +1,6 @@
 {
   "name": "pv-potential-platform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "兰州财经大学周边公共建筑屋顶光伏潜力评估与碳减排决策平台",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "pinia": "^2.1.7",
+    "axios": "^1.6.8",
     "element-plus": "^2.6.3",
+    "@element-plus/icons-vue": "^2.3.1",
     "echarts": "^5.5.0"
   },
   "devDependencies": {

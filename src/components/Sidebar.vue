@@ -4,14 +4,17 @@
       <ul class="nav-list">
         <li 
           v-for="item in menuItems" 
-          :key="item.id" 
+          :key="item.name" 
           class="nav-item"
-          :class="{ active: activeMenu === item.id }"
-          @click="activeMenu = item.id"
+          :class="{ active: $route.name === item.name }"
         >
-          <span class="nav-icon">{{ item.icon }}</span>
-          <span class="nav-text">{{ item.name }}</span>
-          <span v-if="item.active" class="nav-dot"></span>
+          <router-link :to="item.path" class="nav-link">
+            <el-icon :size="24">
+              <component :is="item.icon" />
+            </el-icon>
+            <span class="nav-text">{{ item.label }}</span>
+            <span v-if="item.active" class="nav-dot"></span>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -19,19 +22,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
-const activeMenu = ref('home')
+import { HomeFilled, DataAnalysis, Money, Guide, Aim, DataLine, Tools, Setting } from '@element-plus/icons-vue'
 
 const menuItems = [
-  { id: 'home', name: '首页', icon: '🏠', active: true },
-  { id: 'suitability', name: '适宜性评估', icon: '📊', active: false },
-  { id: 'benefit', name: '效益评估', icon: '💰', active: false },
-  { id: 'emission', name: '碳减排评估', icon: '🌿', active: false },
-  { id: 'decision', name: '决策支持', icon: '🎯', active: false },
-  { id: 'visual', name: '可视化分析', icon: '📈', active: false },
-  { id: 'operation', name: '运维管理', icon: '⚙️', active: false },
-  { id: 'system', name: '系统管理', icon: '🔧', active: false }
+  { name: 'Home', label: '首页', path: '/home', icon: HomeFilled, active: true },
+  { name: 'Suitability', label: '适宜性评估', path: '/suitability', icon: DataAnalysis, active: false },
+  { name: 'Benefit', label: '效益评估', path: '/benefit', icon: Money, active: false },
+  { name: 'Emission', label: '碳减排评估', path: '/emission', icon: Guide, active: false },
+  { name: 'Decision', label: '决策支持', path: '/decision', icon: Aim, active: false },
+  { name: 'Visual', label: '可视化分析', path: '/visual', icon: DataLine, active: false },
+  { name: 'Operation', label: '运维管理', path: '/operation', icon: Tools, active: false },
+  { name: 'System', label: '系统管理', path: '/system', icon: Setting, active: false }
 ]
 </script>
 
