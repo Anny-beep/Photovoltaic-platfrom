@@ -240,7 +240,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import * as echarts from 'echarts'
 import { FullScreen, Download, OfficeBuilding, Sunny, Lightning, Cherry, Refresh, ZoomIn, ZoomOut, MapLocation } from '@element-plus/icons-vue'
 

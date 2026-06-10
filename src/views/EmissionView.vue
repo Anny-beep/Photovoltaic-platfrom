@@ -201,7 +201,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useAppStore } from '@/stores/app'
 import * as echarts from 'echarts'
 import { Refresh, Document, Cherry, Sunny, Cloudy, Drizzling, Histogram, Download, CircleCheck, Clock, Aim, Ship } from '@element-plus/icons-vue'

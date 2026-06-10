@@ -198,7 +198,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import * as echarts from 'echarts'
 import { Star, ArrowRight, Trophy, CircleCheck, View, WarnTriangleFilled, WarningFilled } from '@element-plus/icons-vue'
 
